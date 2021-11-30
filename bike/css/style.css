@@ -1,0 +1,281 @@
+/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"
+}
+
+.header {
+	width: 100%;
+	height: 45px;
+	padding-top: 5px;
+	position: fixed;
+	background: linear-gradient(white, grey, grey);
+	border-bottom: 3px solid black;
+	margin: 0px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	text-align: center;
+	font-size: 30px;
+}
+
+.title {
+	background: white;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 3px;
+	width: 300px;
+	
+}
+
+.table {
+	float: center;
+	width: calc(100% - 100px);
+	top: 51px;
+	height: 60%;
+	right: 0px;
+	left: 0px;
+	padding: 0px 50px;
+	background: grey;
+	position: fixed;
+}
+
+.maintable {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 100%;	
+	float: center;
+}
+
+.maintable th {
+	text-align: left;
+	border: 1px solid black;
+	width: auto;
+}
+
+.maintable tr {
+	border-left: 1px solid black;
+	text-align: center;
+	width: auto;
+}
+
+.maintable td {
+	width: auto;
+}
+
+.maintable tr:nth-child(even) {
+  	background-color: #dddddd;
+}
+
+.maintablediv {
+	overflow-x: auto;
+	border: 3px solid black;
+	border-radius: 5px;
+	background: white;
+}
+
+.maintable2 {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 100%;	
+	float: center;
+	overflow: auto;
+  white-space: nowrap;
+  display: block;
+}
+
+.maintable2 th {
+	text-align: left;
+	border: 1px solid black;
+	width: auto;
+}
+
+.maintable2 tr {
+	border-left: 1px solid black;
+	text-align: center;
+	width: auto;
+}
+
+.maintable2 td {
+	width: auto;
+}
+
+.maintable2 tr:nth-child(even) {
+  	background-color: #dddddd;
+}
+
+.maintablediv2 {
+	overflow-x: auto;
+	border: 3px solid black;
+	border-radius: 5px;
+	background: white;
+}
+
+.reloader {
+	padding: 5px;
+	background: white;
+	border: 1px solid black;
+	border-radius: 3px;
+	width: 100px;
+}
+
+.selector {
+	background: white;
+	border: 3px solid black;
+	border-radius: 35px;
+	width: 710px;
+	display: inline-block;
+	height: 65px;
+	bottom: 42%;
+	position: fixed;
+	margin-left: calc(50% - 360px);
+}
+
+.b {
+	margin: 18px;
+	
+}
+
+.a {
+	border-right: 1px solid black;
+	padding: 20px;
+	font-size: 25px;
+	margin-top: 10px;
+	position: relative;
+/*	z-index: -1;*/
+	
+}
+
+.e {
+	padding: 20px;
+	font-size: 25px;
+	margin-top: 10px;
+	position: relative;
+/*	z-index: -1;*/
+}
+.v {
+	padding: 20px;
+	font-size: 25px;
+	margin-top: 10px;
+	position: relative;
+/*	z-index: -1;*/
+}
+
+.d {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 20px;
+	font-size: 25px;
+	margin-top: 10px;
+	position: relative;
+/*	color: blue;*/
+/*	z-index: -1;*/
+}
+
+.but {
+	text-decoration: none;
+	display: inline;
+}
+
+.adder {
+	position: fixed;
+	width: calc(100% - 100px);
+	left: 0px;
+	bottom: 0px;
+	height: calc(30%);
+	padding: 50px;
+	background: lightgrey;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+.editer {
+	position: fixed;
+	width: calc(100% - 100px);
+	left: 0px;
+	bottom: 0px;
+	height: calc(30%);
+	padding: 50px;
+	background: lightgrey;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+.deleter {
+	position: fixed;
+	width: calc(100% - 100px);
+	left: 0px;
+	bottom: 0px;
+	height: calc(30%);
+	padding: 50px;
+	background: lightgrey;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+
+.viewer {
+	position: fixed;
+	width: calc(100% - 100px);
+	left: 0px;
+	bottom: 0px;
+	height: calc(30%);
+	padding: 50px;
+	background: lightgrey;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+.viewer2 {
+	position: fixed;
+	width: calc(100% - 100px);
+	left: 0px;
+	bottom: 0px;
+	height: calc(30%);
+	padding: 50px;
+	background: lightgrey;
+	border-bottom: 1px solid black;
+	text-align: center;
+	display: block;
+}
+
+.box {
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 11px;
+	background: grey;
+	width: 50%;
+	padding: 10px;
+	text-align: center;
+}
+
+.box2 {
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 11px;
+	background: grey;
+	width: 90%;
+	padding: 10px;
+	text-align: center; 
+}
+
+.in {
+	padding: 3px;
+/*	right: 50%;*/
+/*	position: fixed;*/
+}
+/*
+.geotableh {
+	display: block;
+	position: relative;
+	top: 0%;
+	background: white;
+}
+
+.geotable {
+	display: inline;
+		position: relative;
+	top: 0%;
+}
+*/
+
+.cv {
+	
+}

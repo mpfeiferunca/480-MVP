@@ -1,0 +1,45 @@
+/* CSS Document */
+
+body {
+	margin: 0;
+	background: #333333;
+
+}
+a:link { text-decoration: none; }
+
+	.topbar {
+		text-align: center;
+		border-bottom: black 1px solid;
+		font-size: 1.5em;
+		background: lightgrey;
+		width: 100%;
+		top: 0;
+		height: 5%;
+		position: fixed;
+		display: block;
+		z-index: 0;
+		text-decoration: none;
+		color: black;
+		
+	}
+	
+	.midbox {
+		background: white;
+		width: 80%;
+		height: 85%;
+		left: 10%;
+		top: 10%;
+		bottom: 0%;
+		margin: 0 auto;	
+		display: block;
+		text-align: center;
+		position: fixed;
+		text-decoration: none;
+		color: black;
+		
+	}
+	
+	.linkbox {
+		color: black;
+		font-size: 1.5em;
+	}
