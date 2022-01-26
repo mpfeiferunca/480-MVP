@@ -1,3 +1,5 @@
+<!-- function used to connect to database -->
+
 <?php
 
 DEFINE ('DB_USER', 'mpfeifer');

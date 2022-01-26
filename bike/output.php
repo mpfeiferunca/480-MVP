@@ -1,3 +1,5 @@
+<!-- html for output page -->
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -9,6 +11,7 @@
 	<script src="scripts/delete.php"></script>
 	<script src="scripts/edit.php"></script>
 	<script src="scripts/view.php"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -20,6 +23,7 @@
 	<br>
 	<br>
 	<div class="table">
+	<!-- making connection to database -->
 		<?php 
 		error_reporting(E_ALL);
         ini_set('display_errors', 1);
@@ -36,6 +40,8 @@
 			mysqli_close($con);
 			echo "<center><p class='title'>Bikes in Database</p></center>"
 		?>
+		
+		<!-- displaying main output table for bikes -->
 		<div class="maintablediv">
 			<table class="maintable">
 				<tr> 
@@ -48,6 +54,7 @@
 					<th>Material</th>
 				</tr>
 
+			<!-- querying database for bikes -->
 				<?php
 				while ($row = mysqli_fetch_array($result)) {
 					$id = $row['id'];

@@ -1,3 +1,5 @@
+<!-- import as text page -->
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -8,6 +10,8 @@
 </head>
 
 <body>
+
+<!-- text boxs for import bike as text tool -->
 	<div class='topbar'><a href="https://www.cs.unca.edu/~mpfeifer/bike/">Home</a></div>
 	<br><br><br><br>
 	<center>
@@ -25,6 +29,8 @@
 		</form>
 		</div>
 	</center>
+	
+	<!-- query to databse to add bike to database -->
 		<?php
 			include 'scripts/add.php';
 			

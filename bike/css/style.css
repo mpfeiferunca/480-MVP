@@ -279,3 +279,40 @@ body {
 .cv {
 	
 }
+
+.imgarea {
+	border: 1px solid black;
+	background: white;
+	width: 80%;
+	height: 85%;
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	background-repeat: no-repeat;
+}
+
+.inbut {
+	top: 7%;
+	left: 10%;
+	position: fixed;
+}
+
+.startimport {
+	display: none;
+	top: 50%;
+	position: absolute;
+	margin-right: auto; 
+	margin-left: auto;
+	width: 100px;
+	height: 50px;
+	float: none;
+}
+
+.tooltip {
+	display: none;
+	bottom: 5%;
+	position: fixed;
+	background: grey;
+	
+	
+}

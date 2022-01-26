@@ -5,8 +5,158 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/style.css">
+	
+	
+	
 </head>
 
 <body>
-	<div class='topbar'><a href="https://www.cs.unca.edu/~mpfeifer/bike/">Home</a></div>
+	<div class='topbar'><a href="https://www.cs.unca.edu/~mpfeifer/bike/">Home</a></div> <!-- nav bar -->
+	
+	<input type="file" class="inbut" id="imageinput" accept="image/jpeg"> <!-- button used to upload image -->
+	
+	<center><button onclick="starter()" class="startimport" id="startimport">Start Import</button></center>
+	
+	<div id='area' class='imgarea'></div> <!-- "canvas for import by image tool -->
+	
+	<div class ="tooltip" id="tooltip"> </div>
+	
+	
+	<script>
+		//function for uploading image to import from image tool
+		var pxtomm
+		var framesize = "L";
+		var wheelsize = 27.5;
+		var xPosition = 0;
+		var yPosition = 0;
+		var counter = 0;
+		var centeroffrontwheelx = 0;
+		var centeroffrontwheely = 0;
+		var centerofrearwheelx = 0;
+		var centerofrearwheely = 0;
+		var bottomofrimx = 0;
+		var bottomofrimy = 0;
+		const image_input = document.querySelector("#imageinput");
+
+		image_input.addEventListener("change", function () {
+			const reader = new FileReader(); //create file reader
+			reader.addEventListener("load", () => {
+				const uploadedimage = reader.result;
+				document.querySelector("#area").style.backgroundImage = `url(${uploadedimage})`; //set background of area to uploaded image
+			});
+			reader.readAsDataURL(this.files[0]);
+			
+			document.getElementById('startimport').style.display  = "block"; //show start button
+		});
+		
+		
+		
+		//functions for getting click position for import from image tool
+		var thearea = document.querySelector("#area"); 
+		//thearea.addEventListener("click", getClickPosition, false); //calling getclickposition
+		
+		//call this function to get a click position
+		function getClickPosition(e) {
+			xPosition = 0;
+			yPosition = 0;
+			var parentPosition = getpos(e.currentTarget); //call getpos funtion
+			xPosition = e.clientX - parentPosition.x ; //call getparent for x
+			yPosition = e.clientY - parentPosition.y ; //call getparent for y
+	
+			//alert(xPosition); 
+			//alert(yPosition);
+			
+			if (counter == 2) {
+				centerofrearwheelx = xPosition;
+				centerofrearwheely = yPosition;
+				counter = 3;
+				document.getElementById('tooltip').innerHTML  = "Click on ...";
+				var wheelbase = (centeroffrontwheelx - centerofrearwheelx);
+				wheelbase = wheelbase * pxtomm;
+				alert("f:" + centeroffrontwheelx + " r:" + centerofrearwheelx + " pxtomm:" + pxtomm + " wb:" + wheelbase);
+				//alert(centeroffrontwheely + " " + bottomofrimy);
+			}
+			if (counter == 1) {
+				bottomofrimx = xPosition;
+				bottomofrimy = yPosition;
+				counter = 2;
+				//alert(bottomofrimx); 
+				//alert(bottomofrimy);
+				document.getElementById('tooltip').innerHTML  = "Click on the center of the rear wheel"; 
+				pxtomm = (bottomofrimy - centeroffrontwheely);
+				if (wheelsize == 26) {
+					pxtomm = (559/pxtomm)/2;
+				}
+				if (wheelsize == 27.5) {
+					pxtomm = (584/pxtomm)/2;
+				}
+				if (wheelsize == 29) {
+					pxtomm = (622/pxtomm)/2;
+				}
+				
+				alert("1px = " + pxtomm + "mm");
+			}
+			if (counter == 0){
+				centeroffrontwheelx = xPosition;
+				centeroffrontwheely = yPosition;
+				counter = 1;
+				//alert(centeroffrontwheelx); 
+				//alert(centeroffrontwheely);
+				document.getElementById('tooltip').innerHTML  = "Click on lowest point on the outside edge of the front rim"; 
+			}
+			
+			
+			
+			
+		}
+		
+		//helper function fog get click position
+		function getpos(el) {
+			//var xPosition;
+			//var yPosition;
+ 
+			while (el) {
+				if (el.tagName == "BODY") {
+					var xScrollPos = el.scrollLeft || document.documentElement.scrollLeft;
+					var yScrollPos = el.scrollTop || document.documentElement.scrollTop;
+ 
+					xPosition += (el.offsetLeft - xScrollPos + el.clientLeft);
+					yPosition += (el.offsetTop - yScrollPos + el.clientTop);
+				} else {
+					xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+					yPosition += (el.offsetTop - el.scrollTop + el.clientTop);           //doing math so pixel count is accurate to its div
+				}
+					el = el.offsetParent;
+			}
+			//alert(xPosition)
+			//alert(yPosition)
+			return {
+				x: xPosition,
+				y: yPosition //returns object containing x and y
+			};
+		}
+		/*
+		function starter() {
+			var thearea = document.querySelector("#area"); 
+			
+			document.getElementById('startimport').style.display  = "none"; //hide start button
+			document.getElementById('tooltip').style.display  = "block"; //show tooltip
+			document.getElementById('tooltip').innerHTML  = "Click on the center of the front wheel"; 
+			thearea.addEventListener("click", getClickPosition, false);
+			alert(xPosition); 
+			alert(yPosition);
+		}
+		*/
+		
+		function starter() {
+			document.getElementById('startimport').style.display  = "none"; //hide start button
+			wheelsize = prompt("Please enter the wheel size", "26, 27.5 or 29?");
+			framesize = prompt("Please enter the frame size", "S, M, L, XL, etc.");
+			document.getElementById('tooltip').style.display  = "block"; //show tooltip
+			document.getElementById('tooltip').innerHTML  = "Click on the center of the front wheel"; 
+			thearea.addEventListener("click", getClickPosition, false);
+			//alert(xPosition); 
+			//alert(yPosition); //add another event listener to store x and y
+		}
+	</script>
 </body>

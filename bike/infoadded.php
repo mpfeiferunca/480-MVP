@@ -1,7 +1,10 @@
+<!-- page user is redirected to when new bike is uploaded to database -->
+
 <html>
 
 <body>
 
+<!-- database query to connect to and display bikes in database as a table on webpage -->
 <?php
 
 if(isset($_POST['submit'])){
@@ -44,6 +47,8 @@ if(isset($_POST['submit'])){
 
 ?>
 
+
+<!-- database query to add new bike to database -->
 <form action = "https://www.cs.unca.edu/~mpfeifer/bike/infoadded.php" method = "post">
 	<b>Add New Geo</b>
 	<p>Model: <input type="text" name="model" size="30" value=""/></p>

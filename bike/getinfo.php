@@ -1,3 +1,5 @@
+<!-- database query to connect to database for bike table -->
+
 <?php
 
 require_once('mysqliconnect.php');
