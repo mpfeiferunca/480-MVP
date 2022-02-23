@@ -14,8 +14,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
-<body>
-<h1>test</h1>
+<body> 
 	<div class='topbar'><a href="https://www.cs.unca.edu/~mpfeifer/bike/">Home</a></div>
 	
 	
@@ -135,10 +134,24 @@
 			}			
 		?>		
 	</div>
+	<script>
+		function doimage(id){
+			sessionStorage.setItem("Modeliid", id);
+			location.replace("https://www.cs.unca.edu/~mpfeifer/bike/image.php");
+				
+		}
+	
+		function doimg(){
+			iid = prompt("Please enter the ID"," ");
+			doimage(iid);
+
+		}
+	</script>
 	
 	<div class="editer" id="showediter">
 	<center>
 		<div class="box2">
+		<button onclick="doimg()" class="doimage" id="doimage">Import Geo from Image</button>
 		<form method="post" id="addform">
 		<label for="id">ID: </label><input name="id" type="text" class="in" id="pid"> 
 		<label for="esize">Size: </label><input name="esize" type="text" class="in" id="psize"> 

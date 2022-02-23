@@ -316,3 +316,9 @@ body {
 	
 	
 }
+
+.finsub {
+	display: none;
+	top: 50%;
+	position: fixed;
+}

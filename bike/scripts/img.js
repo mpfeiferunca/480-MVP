@@ -1,0 +1,3 @@
+			function doimage(id){
+				
+			}
