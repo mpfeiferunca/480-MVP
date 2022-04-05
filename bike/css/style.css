@@ -30,13 +30,14 @@ body {
 .table {
 	float: center;
 	width: calc(100% - 100px);
-	top: 51px;
-	height: 60%;
+	top: 0px;
+	bottom: 0px;
+	height: 255%;
 	right: 0px;
 	left: 0px;
 	padding: 0px 50px;
 	background: grey;
-	position: fixed;
+	position: relative;
 }
 
 .maintable {
@@ -299,20 +300,24 @@ body {
 
 .startimport {
 	display: none;
-	top: 50%;
+	top: 6%;
+	left: 10%;
 	position: absolute;
 	margin-right: auto; 
 	margin-left: auto;
-	width: 100px;
+	width: 80%;
 	height: 50px;
 	float: none;
 }
 
 .tooltip {
 	display: none;
-	bottom: 5%;
+	top: 6%;
 	position: fixed;
+	left: 10%;
+	padding: 10px;
 	background: grey;
+	width: 79%;
 	
 	
 }
@@ -321,4 +326,14 @@ body {
 	display: none;
 	top: 50%;
 	position: fixed;
+}
+
+.midbar {
+	background: white;
+	width: 75%;
+	height: 800%;
+	position: absolute;
+	left: 12.5%;
+	top: 5%;
+	z-index: 10;
 }
